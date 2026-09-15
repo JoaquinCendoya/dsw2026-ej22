@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Acceso seguro al portal administrativo de MedPortal" />
+    <title>Acceso | MedPortal</title>
+    <link rel="stylesheet" href="login.css" />
+    <script src="login.js" defer></script>
+  </head>
+  <body>
+    <main class="login-page">
+      <div class="ambient ambient--top" aria-hidden="true"></div>
+      <div class="ambient ambient--bottom" aria-hidden="true"></div>
+
+      <section class="login-shell" aria-labelledby="login-title">
+        <div class="brand-lockup" aria-label="MedPortal">
+          <div class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" role="img" focusable="false">
+              <path d="M16 3.5 26 7v7.6c0 6.15-4.03 11.58-10 13.4-5.97-1.82-10-7.25-10-13.4V7l10-3.5Z" />
+              <path d="M16 9.8v8.7M11.65 14.15h8.7" />
+            </svg>
+          </div>
+          <p class="brand-name">MedPortal</p>
+          <p class="brand-caption">Gestión de salud</p>
+        </div>
+
+        <form class="login-card" id="login-form" novalidate>
+          <div class="login-card__intro">
+            <p class="eyebrow">Bienvenido de nuevo</p>
+            <h1 id="login-title">Ingresá a tu cuenta</h1>
+            <p>Por favor, autenticá tus datos para acceder al portal de proveedores.</p>
+          </div>
+
+          <div class="field-group">
+            <label for="username">Nombre de usuario</label>
+            <div class="input-wrap">
+              <span class="input-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.25" /><path d="M5.5 19.2c.8-3.1 3.03-4.7 6.5-4.7s5.7 1.6 6.5 4.7" /></svg>
+              </span>
+              <input id="username" name="username" type="text" autocomplete="username" placeholder="Ingrese ID de admin" required />
+            </div>
+            <span class="field-error" id="username-error" role="alert"></span>
+          </div>
+
+          <div class="field-group">
+            <label for="password">Contraseña</label>
+            <div class="input-wrap">
+              <span class="input-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><rect x="6.7" y="10.3" width="10.6" height="8.2" rx="1.5" /><path d="M9 10.3V8a3 3 0 0 1 6 0v2.3" /></svg>
+              </span>
+              <input id="password" name="password" type="password" autocomplete="current-password" placeholder="••••••••" required />
+              <button class="password-toggle" id="password-toggle" type="button" aria-label="Mostrar contraseña" aria-pressed="false">
+                <svg class="eye-icon eye-icon--show" viewBox="0 0 24 24"><path d="M2.8 12s3.1-5 9.2-5 9.2 5 9.2 5-3.1 5-9.2 5-9.2-5-9.2-5Z" /><circle cx="12" cy="12" r="2.1" /></svg>
+                <svg class="eye-icon eye-icon--hide" viewBox="0 0 24 24"><path d="m3.5 3.5 17 17M10.6 6.1c.45-.07.91-.1 1.4-.1 6.1 0 9.2 6 9.2 6a16 16 0 0 1-3.17 3.5M6.2 6.5C3.9 8.1 2.8 12 2.8 12s3.1 6 9.2 6c1.12 0 2.12-.2 3.02-.52" /><path d="M9.9 9.9a2.1 2.1 0 0 0 2.96 2.96" /></svg>
+              </button>
+            </div>
+            <span class="field-error" id="password-error" role="alert"></span>
+          </div>
+
+          <button class="primary-button" type="submit">
+            <span>Iniciar sesión</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13.5 7.5 18 12l-4.5 4.5" /></svg>
+          </button>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+
+          <div class="security-note">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5 19 6v5.3c0 4.3-2.82 8.1-7 9.2-4.18-1.1-7-4.9-7-9.2V6l7-2.5Z" /><path d="m9.5 12 1.7 1.7 3.5-3.5" /></svg>
+            <p><strong>Solo Acceso Seguro:</strong> Este sistema es para personal médico autorizado. Los intentos de acceso no autorizados son registrados y monitoreados para su cumplimiento.</p>
+          </div>
+        </form>
+
+        <p class="login-footer">© 2026 MedPortal · Sistema de gestión para profesionales de la salud</p>
+      </section>
+    </main>
+  </body>
+</html>

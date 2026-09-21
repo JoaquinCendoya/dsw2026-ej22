@@ -90,7 +90,7 @@ button { cursor: pointer; }
   border: 1px solid rgba(206, 222, 234, .8);
   border-radius: 7px;
   background: #fdfefe;
-  box-shadow: 0 24px 65px rgba(0, 15, 32, .33);
+  box-shadow: 0 16px 48px rgba(0, 15, 32, 0.25);
 }
 
 .login-card__intro { padding: 25px 28px 15px; }
@@ -102,7 +102,7 @@ button { cursor: pointer; }
 .field-group + .field-group { margin-top: 14px; }
 .field-group label { display: block; margin-bottom: 7px; color: #223b52; font-size: 11px; font-weight: 600; }
 .input-wrap { position: relative; }
-.input-wrap input { width: 100%; height: 42px; padding: 0 40px 0 35px; border: 1px solid var(--line); border-radius: 4px; outline: 0; color: var(--ink); background: #f5f9fc; font-size: 12px; transition: border-color .2s, box-shadow .2s, background .2s; }
+.input-wrap input { width: 100%; height: 42px; padding: 0 40px 0 35px; border: 1px solid var(--line); border-radius: 6px; outline: 0; color: var(--ink); background: #f5f9fc; font-size: 12px; transition: border-color .2s, box-shadow .2s, background .2s; }
 .input-wrap input::placeholder { color: #7d8d9e; }
 .input-wrap input:focus { border-color: #1689c4; background: #fff; box-shadow: 0 0 0 3px rgba(27, 151, 208, .14); }
 .input-wrap.is-invalid input { border-color: #ca4b54; }
@@ -116,7 +116,7 @@ button { cursor: pointer; }
 .field-error { display: block; min-height: 0; margin-top: 4px; color: #b4232d; font-size: 10px; }
 .field-error:not(:empty) { min-height: 14px; }
 
-.primary-button { display: flex; width: calc(100% - 56px); min-height: 42px; margin: 17px 28px 19px; align-items: center; justify-content: center; gap: 9px; border: 0; border-radius: 3px; color: #fff; background: #043c6a; box-shadow: 0 4px 8px rgba(2, 38, 69, .2); font-size: 12px; font-weight: 600; transition: transform .2s, background .2s, box-shadow .2s; }
+.primary-button { display: flex; width: calc(100% - 56px); min-height: 42px; margin: 17px 28px 19px; align-items: center; justify-content: center; gap: 9px; border: 0; border-radius: 6px; color: #fff; background: #043c6a; box-shadow: 0 4px 8px rgba(2, 38, 69, .2); font-size: 12px; font-weight: 600; transition: transform .2s, background .2s, box-shadow .2s; }
 .primary-button svg { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.6; }
 .primary-button:hover { background: #075487; box-shadow: 0 7px 16px rgba(2, 38, 69, .25); transform: translateY(-1px); }
 .primary-button:active { transform: translateY(0); }

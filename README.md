@@ -1,23 +1,23 @@
-# dsw2026-ej22
+# MedPortal - vistas de administración
 
-Este proyecto requiere que implementes la funcionalidad para abrir el menú de navegación (`nav`) desde el botón correspondiente cuando la página está en modo móvil.
+Implementación estática de las vistas **Login** y **Dashboard** indicadas en la página 23 de la consigna del TPI.
 
-**Instrucciones:**
-- Utiliza JavaScript para detectar el clic en el botón de menú.
-- Al hacer clic, muestra u oculta el menú de navegación.
-- Asegúrate de que la funcionalidad solo se active en resoluciones móviles.
+## Estructura
 
-Puedes usar `classList.toggle` para mostrar/ocultar el menú.
-
-Ejemplo básico:
-
-```js
-const menuBtn = document.getElementById('menu-btn');
-const nav = document.getElementById('nav');
-
-menuBtn.addEventListener('click', () => {
-  nav.classList.toggle('open');
-});
+```text
+login/
+├── index.html
+├── login.css
+└── login.js
+dashboard/
+├── index.html
+├── dashboard.css
+└── dashboard.js
 ```
 
-No olvides agregar los estilos CSS necesarios para que el menú se oculte y se muestre correctamente en modo móvil.
+## Acceso de prueba
+
+- Usuario: `admin`
+- Contraseña: `password`
+
+El login redirige al dashboard al validar estas credenciales. En el dashboard también funciona el menú lateral responsive, el cierre de sesión, el buscador de doctores y las acciones visuales de los botones.

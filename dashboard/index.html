@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Panel de administración de MedPortal" />
+    <title>Panel | MedPortal</title>
+    <link rel="stylesheet" href="dashboard.css" />
+    <script src="dashboard.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <div class="mobile-scrim" id="mobile-scrim" aria-hidden="true"></div>
+      <aside class="sidebar" id="sidebar" aria-label="Navegación principal">
+        <div class="sidebar__brand">
+          <div class="sidebar__brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32"><path d="M16 3.5 26 7v7.6c0 6.15-4.03 11.58-10 13.4-5.97-1.82-10-7.25-10-13.4V7l10-3.5Z" /><path d="M16 9.8v8.7M11.65 14.15h8.7" /></svg>
+          </div>
+          <div>
+            <p>Admin Portal</p>
+            <span>Healthcare Management</span>
+          </div>
+          <button class="sidebar-close" id="sidebar-close" type="button" aria-label="Cerrar menú">×</button>
+        </div>
+
+        <nav class="sidebar__nav">
+          <p class="nav-label">Menú principal</p>
+          <a class="nav-link is-active" href="#panel" aria-current="page">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="6" height="6" rx="1" /><rect x="14" y="4" width="6" height="6" rx="1" /><rect x="4" y="14" width="6" height="6" rx="1" /><rect x="14" y="14" width="6" height="6" rx="1" /></svg>
+            <span>Panel</span>
+          </a>
+          <a class="nav-link" href="#doctores">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="7" width="14" height="13" rx="2" /><path d="M9 7V5.8A1.8 1.8 0 0 1 10.8 4h2.4A1.8 1.8 0 0 1 15 5.8V7M12 11v5M9.5 13.5h5" /></svg>
+            <span>Doctores</span>
+          </a>
+          <a class="nav-link" href="#especialidades">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 4 3.1 5.2H8.9L12 4ZM6.8 13.2h4.8V18H6.8zM15.2 13.2H20V18h-4.8z" /><path d="M12 9.2v2.2" /></svg>
+            <span>Especialidades</span>
+          </a>
+          <a class="nav-link" href="#pacientes">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="2.5" /><path d="M4.5 18.5c.55-2.6 2.03-4 4.5-4s3.95 1.4 4.5 4M16 10.5a2.2 2.2 0 1 0 0-4.4M15.6 14.6c2.1.12 3.35 1.42 3.9 3.9" /></svg>
+            <span>Búsqueda de Pacientes</span>
+          </a>
+        </nav>
+
+        <div class="sidebar__bottom">
+          <a class="nav-link" href="#configuracion">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Z" /><path d="m19.3 13.7 1.1.85-1.6 2.77-1.34-.52a7.2 7.2 0 0 1-1.75 1.02l-.2 1.42h-3.2l-.2-1.42a7.2 7.2 0 0 1-1.75-1.02l-1.34.52-1.6-2.77 1.1-.85a7.1 7.1 0 0 1 0-2l-1.1-.85 1.6-2.77 1.34.52a7.2 7.2 0 0 1 1.75-1.02l.2-1.42h3.2l.2 1.42a7.2 7.2 0 0 1 1.75 1.02l1.34-.52 1.6 2.77-1.1.85a7.1 7.1 0 0 1 0 2Z" /></svg>
+            <span>Configuración</span>
+          </a>
+          <button class="nav-link nav-link--button" id="logout" type="button">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 5H6.5A1.5 1.5 0 0 0 5 6.5v11A1.5 1.5 0 0 0 6.5 19H10M14 8l4 4-4 4M9 12h9" /></svg>
+            <span>Cerrar Sesión</span>
+          </button>
+          <div class="profile">
+            <div class="profile__avatar">MS</div>
+            <div><strong>María Solís</strong><span>Administradora Jefe</span></div>
+          </div>
+        </div>
+      </aside>
+
+      <main class="main-content" id="panel">
+        <div class="content-wrap">
+          <button class="menu-toggle mobile-menu-trigger" id="menu-toggle" type="button" aria-label="Abrir menú" aria-controls="sidebar" aria-expanded="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" /></svg>
+            <span>Menú</span>
+          </button>
+          <section class="page-heading">
+            <div>
+              <p class="section-kicker">Panel de administración</p>
+              <h1>Vista General de Gestión</h1>
+              <p>Configurá el personal médico y las especialidades del departamento.</p>
+            </div>
+            <div class="heading-actions">
+              <button class="button button--primary" type="button" data-action="doctor">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" /></svg>
+                Agregar Nuevo Doctor
+              </button>
+              <button class="button button--outline" type="button" data-action="specialty">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 4 3 5H9l3-5ZM6 14h5v5H6zM13 14h5v5h-5zM12 9v3" /></svg>
+                Agregar Nueva Especialidad
+              </button>
+            </div>
+          </section>
+
+          <section class="stats-grid" aria-label="Resumen de actividad">
+            <article class="stat-card">
+              <div class="stat-card__top"><span class="stat-icon stat-icon--blue"><svg viewBox="0 0 24 24"><path d="M5 8h14v12H5zM8.5 8V6.5A2.5 2.5 0 0 1 11 4h2a2.5 2.5 0 0 1 2.5 2.5V8M12 11v5M9.5 13.5h5" /></svg></span><span class="trend trend--up">+4 este mes</span></div>
+              <p>Doctores activos</p><strong>124</strong>
+            </article>
+            <article class="stat-card">
+              <div class="stat-card__top"><span class="stat-icon stat-icon--cyan"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="6" height="6" rx="1" /><rect x="14" y="4" width="6" height="6" rx="1" /><rect x="4" y="14" width="6" height="6" rx="1" /><rect x="14" y="14" width="6" height="6" rx="1" /></svg></span><span class="trend">Estable</span></div>
+              <p>Especialidades activas</p><strong>32</strong>
+            </article>
+            <article class="stat-card">
+              <div class="stat-card__top"><span class="stat-icon stat-icon--green"><svg viewBox="0 0 24 24"><rect x="5" y="6" width="14" height="14" rx="2" /><path d="M8 4v4M16 4v4M5 10h14M9 14.2l2 2 4-4" /></svg></span><span class="trend trend--today">Hoy</span></div>
+              <p>Turnos confirmados para hoy</p><strong>48</strong>
+            </article>
+          </section>
+
+          <section class="directory-card" id="doctores" aria-labelledby="directory-title">
+            <div class="directory-header">
+              <div><p class="section-kicker">Directorio</p><h2 id="directory-title">Directorio de Profesionales Médicos</h2></div>
+              <label class="search-box" for="doctor-search">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="5.6" /><path d="m15 15 4.4 4.4" /></svg>
+                <input id="doctor-search" type="search" placeholder="Buscar por nombre…" />
+              </label>
+            </div>
+            <div class="table-scroll">
+              <table>
+                <thead><tr><th>Nombre del Doctor</th><th>Especialidad</th><th>Estado de Disponibilidad</th><th>Acciones</th></tr></thead>
+                <tbody id="doctor-table-body">
+                  <tr data-doctor="james wilson cardiología"><td><div class="doctor-name"><span class="avatar avatar--james">JW</span><strong>Dr. James Wilson</strong></div></td><td>Cardiología</td><td><span class="availability availability--active"><i></i>Activo</span></td><td><button class="row-action" type="button" aria-label="Ver a Dr. James Wilson">···</button></td></tr>
+                  <tr data-doctor="elena rodriguez neurología"><td><div class="doctor-name"><span class="avatar avatar--elena">ER</span><strong>Dr. Elena Rodriguez</strong></div></td><td>Neurología</td><td><span class="availability availability--active"><i></i>Activo</span></td><td><button class="row-action" type="button" aria-label="Ver a Dr. Elena Rodriguez">···</button></td></tr>
+                  <tr data-doctor="robert chen pediatría"><td><div class="doctor-name"><span class="avatar avatar--robert">RC</span><strong>Dr. Robert Chen</strong></div></td><td>Pediatría</td><td><span class="availability availability--leave"><i></i>De Licencia</span></td><td><button class="row-action" type="button" aria-label="Ver a Dr. Robert Chen">···</button></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="directory-footer"><span id="results-count">Mostrando 1 a 3 de 124 resultados</span><div class="pagination"><button type="button" aria-label="Página anterior" disabled>‹</button><button type="button" aria-label="Página siguiente">›</button></div></div>
+          </section>
+        </div>
+        <div class="toast" id="toast" role="status" aria-live="polite"></div>
+      </main>
+    </div>
+  </body>
+</html>

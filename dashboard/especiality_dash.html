@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Panel de Especialidades" />
+    <title>Panel | MedPortal</title>
+    <link rel="stylesheet" href="dashboard.css" />
+    <script src="speciality_dash.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <div class="mobile-scrim" id="mobile-scrim" aria-hidden="true"></div>
+      <aside class="sidebar" id="sidebar" aria-label="Navegación principal">
+        <div class="sidebar__brand">
+          <div class="sidebar__brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32"><path d="M16 3.5 26 7v7.6c0 6.15-4.03 11.58-10 13.4-5.97-1.82-10-7.25-10-13.4V7l10-3.5Z" /><path d="M16 9.8v8.7M11.65 14.15h8.7" /></svg>
+          </div>
+          <div>
+            <p>Admin Portal</p>
+            <span>Healthcare Management</span>
+          </div>
+          <button class="sidebar-close" id="sidebar-close" type="button" aria-label="Cerrar menú">×</button>
+        </div>
+
+        <nav class="sidebar__nav">
+          <p class="nav-label">Menú principal</p>
+          <a class="nav-link" href="index.html#panel">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="6" height="6" rx="1" /><rect x="14" y="4" width="6" height="6" rx="1" /><rect x="4" y="14" width="6" height="6" rx="1" /><rect x="14" y="14" width="6" height="6" rx="1" /></svg>
+            <span>Panel</span>
+          </a>
+          <a class="nav-link" href="index.html#doctores">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="7" width="14" height="13" rx="2" /><path d="M9 7V5.8A1.8 1.8 0 0 1 10.8 4h2.4A1.8 1.8 0 0 1 15 5.8V7M12 11v5M9.5 13.5h5" /></svg>
+            <span>Doctores</span>
+          </a>
+          <a class="nav-link is-active" href="especiality_dash.html" aria-current="page">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 4 3.1 5.2H8.9L12 4ZM6.8 13.2h4.8V18H6.8zM15.2 13.2H20V18h-4.8z" /><path d="M12 9.2v2.2" /></svg>
+            <span>Especialidades</span>
+          </a>
+          <a class="nav-link" href="#pacientes">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="2.5" /><path d="M4.5 18.5c.55-2.6 2.03-4 4.5-4s3.95 1.4 4.5 4M16 10.5a2.2 2.2 0 1 0 0-4.4M15.6 14.6c2.1.12 3.35 1.42 3.9 3.9" /></svg>
+            <span>Búsqueda de Pacientes</span>
+          </a>
+        </nav>
+
+        <div class="sidebar__bottom">
+          <a class="nav-link" href="#configuracion">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Z" /><path d="m19.3 13.7 1.1.85-1.6 2.77-1.34-.52a7.2 7.2 0 0 1-1.75 1.02l-.2 1.42h-3.2l-.2-1.42a7.2 7.2 0 0 1-1.75-1.02l-1.34.52-1.6-2.77 1.1-.85a7.1 7.1 0 0 1 0-2l-1.1-.85 1.6-2.77 1.34.52a7.2 7.2 0 0 1 1.75-1.02l.2-1.42h3.2l.2 1.42a7.2 7.2 0 0 1 1.75 1.02l1.34-.52 1.6 2.77-1.1.85a7.1 7.1 0 0 1 0 2Z" /></svg>
+            <span>Configuración</span>
+          </a>
+          <button class="nav-link nav-link--button" id="logout" type="button">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 5H6.5A1.5 1.5 0 0 0 5 6.5v11A1.5 1.5 0 0 0 6.5 19H10M14 8l4 4-4 4M9 12h9" /></svg>
+            <span>Cerrar Sesión</span>
+          </button>
+          <div class="profile">
+            <div class="profile__avatar">MS</div>
+            <div><strong>María Solís</strong><span>Administradora Jefe</span></div>
+          </div>
+        </div>
+      </aside>
+
+      <main class="main-content" id="main-content">
+        <div class="content-wrap">
+          <button class="menu-toggle mobile-menu-trigger" id="menu-toggle" type="button" aria-label="Abrir menú" aria-controls="sidebar" aria-expanded="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" /></svg>
+            <span>Menú</span>
+          </button>
+
+          <div class="specialty-listing" id="specialty-listing">
+          <div class="page-heading">
+            <div>
+              <h1>Directorio de Especialidades</h1>
+              <p>Administre las categorías médicas, servicios y disponibilidad del personal especializado.</p>
+            </div>
+            <div class="heading-actions">
+              <label class="search-box" aria-label="Buscar especialidad">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5" /><path d="M16 16l5 5" /></svg>
+                <input id="specialty-search" type="search" placeholder="Buscar especialidad..." />
+              </label>
+              <button class="button button--primary" id="new-specialty" type="button">+ Nueva Especialidad</button>
+            </div>
+          </div>
+
+          <div class="directory-card" id="especialidades">
+            <div class="directory-header">
+              <h2>Especialidades</h2>
+            </div>
+
+            <div class="table-scroll">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Nombre de la Especialidad</th>
+                    <th>Descripción</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                  </tr>
+                </thead>
+                <tbody id="specialty-table-body">
+                  <tr>
+                    <td>
+                      <div class="doctor-name">
+                        <span class="avatar avatar--james">C</span>
+                        <strong>Cardiología</strong>
+                      </div>
+                    </td>
+                    <td>Estudio y tratamiento de trastornos del corazón y del sistema circulatorio.</td>
+                    <td><span class="availability availability--active"><i></i>Active</span></td>
+                    <td><button class="row-action" type="button" data-action="edit" aria-label="Editar Cardiología">✎</button><button class="row-action" type="button" data-action="delete" aria-label="Eliminar Cardiología"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M10 11v6M14 11v6M5 7l1 14h12l1-14M9 7V4h6v3" /></svg></button></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="doctor-name">
+                        <span class="avatar avatar--elena">N</span>
+                        <strong>Neurología</strong>
+                      </div>
+                    </td>
+                    <td>Diagnóstico y tratamiento de todas las categorías de afecciones cerebrales.</td>
+                    <td><span class="availability availability--active"><i></i>Active</span></td>
+                    <td><button class="row-action" type="button" data-action="edit" aria-label="Editar Neurología">✎</button><button class="row-action" type="button" data-action="delete" aria-label="Eliminar Neurología"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M10 11v6M14 11v6M5 7l1 14h12l1-14M9 7V4h6v3" /></svg></button></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="doctor-name">
+                        <span class="avatar avatar--robert">D</span>
+                        <strong>Dermatología</strong>
+                      </div>
+                    </td>
+                    <td>Atención integral de enfermedades de la piel, uñas y cabello.</td>
+                    <td><span class="availability availability--leave"><i></i>Inactive</span></td>
+                    <td><button class="row-action" type="button" data-action="edit" aria-label="Editar Dermatología">✎</button><button class="row-action" type="button" data-action="delete" aria-label="Eliminar Dermatología"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M10 11v6M14 11v6M5 7l1 14h12l1-14M9 7V4h6v3" /></svg></button></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="doctor-name">
+                        <span class="avatar avatar--james">P</span>
+                        <strong>Pediatría</strong>
+                      </div>
+                    </td>
+                    <td>Cuidado médico de lactantes, niños y adolescentes.</td>
+                    <td><span class="availability availability--active"><i></i>Active</span></td>
+                    <td><button class="row-action" type="button" data-action="edit" aria-label="Editar Pediatría">✎</button><button class="row-action" type="button" data-action="delete" aria-label="Eliminar Pediatría"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M10 11v6M14 11v6M5 7l1 14h12l1-14M9 7V4h6v3" /></svg></button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="directory-footer">
+              <span id="specialty-count">Mostrando 4 de 24</span>
+              <div class="pagination">
+                <button type="button" disabled>‹</button>
+                <button type="button">›</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-card__top">
+                <div class="stat-icon stat-icon--blue">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18V8M12 18V6M18 18v-9" /></svg>
+                </div>
+                <span class="trend trend--up">+2%</span>
+              </div>
+              <p>Total especialidades</p>
+              <strong id="total-specialties">24</strong>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-card__top">
+                <div class="stat-icon stat-icon--cyan">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 17V7.5A2.5 2.5 0 0 1 10.5 5h3A2.5 2.5 0 0 1 16 7.5V17" /><path d="M6 12h12" /></svg>
+                </div>
+                <span class="trend trend--today">+15%</span>
+              </div>
+              <p>Más demandada</p>
+              <strong>Cardiología</strong>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-card__top">
+                <div class="stat-icon stat-icon--green">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v16M4 12h16" /></svg>
+                </div>
+                <span class="trend trend--up" id="new-specialty-count">00</span>
+              </div>
+              <p>Nuevas este mes</p>
+              <strong id="latest-new-specialty">Sin nuevas</strong>
+            </div>
+          </div>
+          </div>
+
+          <section class="specialty-form-view" id="specialty-form-view" aria-labelledby="specialty-form-title" hidden>
+            <div class="form-breadcrumb">
+              <button id="form-back-link" type="button">Especialidades</button>
+              <span aria-hidden="true">›</span>
+              <span id="form-mode-label">Agregar Nueva Especialidad</span>
+            </div>
+            <div class="specialty-form-heading">
+              <h1 id="specialty-form-title">Registrar Nueva Especialidad</h1>
+              <p>Complete la información técnica y administrativa para dar de alta una especialidad médica en el sistema hospitalario.</p>
+            </div>
+            <form class="specialty-form-card" id="specialty-form">
+              <div class="form-field">
+                <label for="specialty-name">Nombre de la Especialidad</label>
+                <input id="specialty-name" name="name" type="text" placeholder="Ej. Cardiología Intervencionista" required />
+              </div>
+              <div class="form-field">
+                <label for="specialty-description">Descripción</label>
+                <textarea id="specialty-description" name="description" placeholder="Detalle el alcance de la especialidad, procedimientos principales y requisitos de derivación..." required></textarea>
+              </div>
+              <div class="form-field">
+                <label for="specialty-status">Estado inicial</label>
+                <select id="specialty-status" name="status">
+                  <option value="active">Activo - Disponible para programación</option>
+                  <option value="inactive">Inactivo - No disponible para programación</option>
+                </select>
+              </div>
+              <div class="specialty-form-actions">
+                <button class="button button--cancel" id="cancel-specialty" type="button">Cancelar</button>
+                <button class="button button--primary" id="save-specialty-button" type="submit">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h12l3 3v13H5z" /><path d="M8 4v6h8V4M8 20v-7h8v7" /></svg>
+                  <span id="save-specialty-label">Guardar Especialidad</span>
+                </button>
+              </div>
+            </form>
+          </section>
+
+          <section class="directory-card nav-placeholder" id="pacientes" aria-labelledby="patients-title">
+            <div class="directory-header">
+              <div><h2 id="patients-title">Búsqueda de Pacientes</h2><p>Esta sección todavía no está disponible.</p></div>
+            </div>
+          </section>
+
+          <section class="directory-card nav-placeholder" id="configuracion" aria-labelledby="settings-title">
+            <div class="directory-header">
+              <div><h2 id="settings-title">Configuración</h2><p>Esta sección todavía no está disponible.</p></div>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

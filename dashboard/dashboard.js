@@ -11,6 +11,24 @@ document.addEventListener('DOMContentLoaded', () => {
   let toastTimer;
 
   const isMobile = () => window.matchMedia('(max-width: 700px)').matches;
+  const navLinks = [...document.querySelectorAll('.sidebar .nav-link:not(.nav-link--button)')];
+
+  const updateActiveLink = () => {
+    const activeLink = navLinks.find((link) => {
+      const destination = new URL(link.href);
+      return destination.pathname === window.location.pathname && destination.hash === window.location.hash;
+    });
+
+    if (!activeLink) return;
+    navLinks.forEach((link) => {
+      link.classList.toggle('is-active', link === activeLink);
+      if (link === activeLink) link.setAttribute('aria-current', 'page');
+      else link.removeAttribute('aria-current');
+    });
+  };
+
+  updateActiveLink();
+  window.addEventListener('hashchange', updateActiveLink);
 
   const closeMenu = () => {
     sidebar.classList.remove('is-open');

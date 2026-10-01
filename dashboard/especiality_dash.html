@@ -6,7 +6,7 @@
     <meta name="description" content="Panel de Especialidades" />
     <title>Panel | MedPortal</title>
     <link rel="stylesheet" href="dashboard.css" />
-    <script src="speciality_dash.js" defer></script>
+    <script type="module" src="speciality_dash.js" defer></script>
   </head>
   <body>
     <div class="app-shell">
@@ -63,7 +63,7 @@
         <div class="content-wrap">
           <button class="menu-toggle mobile-menu-trigger" id="menu-toggle" type="button" aria-label="Abrir menú" aria-controls="sidebar" aria-expanded="false">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" /></svg>
-            <span>Menú</span>
+            <span>Menu</span>
           </button>
 
           <div class="specialty-listing" id="specialty-listing">
@@ -97,50 +97,6 @@
                   </tr>
                 </thead>
                 <tbody id="specialty-table-body">
-                  <tr>
-                    <td>
-                      <div class="doctor-name">
-                        <span class="avatar avatar--james">C</span>
-                        <strong>Cardiología</strong>
-                      </div>
-                    </td>
-                    <td>Estudio y tratamiento de trastornos del corazón y del sistema circulatorio.</td>
-                    <td><span class="availability availability--active"><i></i>Active</span></td>
-                    <td><button class="row-action" type="button" data-action="edit" aria-label="Editar Cardiología">✎</button><button class="row-action" type="button" data-action="delete" aria-label="Eliminar Cardiología"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M10 11v6M14 11v6M5 7l1 14h12l1-14M9 7V4h6v3" /></svg></button></td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div class="doctor-name">
-                        <span class="avatar avatar--elena">N</span>
-                        <strong>Neurología</strong>
-                      </div>
-                    </td>
-                    <td>Diagnóstico y tratamiento de todas las categorías de afecciones cerebrales.</td>
-                    <td><span class="availability availability--active"><i></i>Active</span></td>
-                    <td><button class="row-action" type="button" data-action="edit" aria-label="Editar Neurología">✎</button><button class="row-action" type="button" data-action="delete" aria-label="Eliminar Neurología"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M10 11v6M14 11v6M5 7l1 14h12l1-14M9 7V4h6v3" /></svg></button></td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div class="doctor-name">
-                        <span class="avatar avatar--robert">D</span>
-                        <strong>Dermatología</strong>
-                      </div>
-                    </td>
-                    <td>Atención integral de enfermedades de la piel, uñas y cabello.</td>
-                    <td><span class="availability availability--leave"><i></i>Inactive</span></td>
-                    <td><button class="row-action" type="button" data-action="edit" aria-label="Editar Dermatología">✎</button><button class="row-action" type="button" data-action="delete" aria-label="Eliminar Dermatología"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M10 11v6M14 11v6M5 7l1 14h12l1-14M9 7V4h6v3" /></svg></button></td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div class="doctor-name">
-                        <span class="avatar avatar--james">P</span>
-                        <strong>Pediatría</strong>
-                      </div>
-                    </td>
-                    <td>Cuidado médico de lactantes, niños y adolescentes.</td>
-                    <td><span class="availability availability--active"><i></i>Active</span></td>
-                    <td><button class="row-action" type="button" data-action="edit" aria-label="Editar Pediatría">✎</button><button class="row-action" type="button" data-action="delete" aria-label="Eliminar Pediatría"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M10 11v6M14 11v6M5 7l1 14h12l1-14M9 7V4h6v3" /></svg></button></td>
-                  </tr>
                 </tbody>
               </table>
             </div>

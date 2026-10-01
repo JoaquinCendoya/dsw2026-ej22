@@ -34,3 +34,12 @@ export function saveSpecialty(specialty) {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(specialties));
   return specialty;
 }
+export function getFilteredSpecialties(searchTerm) {
+  const allSpecialties = getSpecialties();
+  if (!searchTerm) return allSpecialties;
+  
+  const lowerTerm = searchTerm.toLowerCase().trim();
+  return allSpecialties.filter(specialty => 
+    specialty.name.toLowerCase().includes(lowerTerm)
+  );
+}

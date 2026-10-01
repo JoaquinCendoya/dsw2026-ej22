@@ -1,4 +1,4 @@
-import { initStorage, getSpecialties, saveSpecialty } from './storage.js';
+import { initStorage, getSpecialties, saveSpecialty, getFilteredSpecialties } from './storage.js';
 
 // 1. AÑADIDO 'async' AQUÍ PARA PODER USAR await
 document.addEventListener('DOMContentLoaded', async () => {

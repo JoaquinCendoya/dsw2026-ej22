@@ -160,6 +160,16 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
   }
 
+  // Evento de búsqueda
+  if (specialtySearch) {
+    specialtySearch.addEventListener('input', (e) => {
+      const searchTerm = e.target.value;
+      const results = getFilteredSpecialties(searchTerm);
+      currentPage = 1; // Reseteamos a la página 1 al buscar
+      renderTable(results);
+    });
+  }
+  
   // Sidebar Mobile Toggle
   const setMenuOpen = (open) => {
     if (sidebar && mobileScrim && menuToggle) {

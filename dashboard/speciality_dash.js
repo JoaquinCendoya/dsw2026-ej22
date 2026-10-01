@@ -19,7 +19,8 @@ document.addEventListener('DOMContentLoaded', async () => {
   const specialtyDescription = document.getElementById('specialty-description');
   const specialtyStatus = document.getElementById('specialty-status');
   const specialtyTableBody = document.getElementById('specialty-table-body');
-  
+  const specialtySearch = document.getElementById('specialty-search');
+
   // Elementos de paginación
   const prevBtn = document.querySelector('.pagination button[aria-label="Página anterior"]');
   const nextBtn = document.querySelector('.pagination button[aria-label="Página siguiente"]');
@@ -75,8 +76,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     return row;
   };
 
-  const renderTable = () => {
-    const specialties = getSpecialties();
+  const renderTable = (filteredSpecialties = null) => {
+    // Si pasamos un array filtrado lo usamos, si no, traemos todos.
+    const specialties = filteredSpecialties || getSpecialties();
     const totalItems = specialties.length;
     const totalPages = Math.ceil(totalItems / itemsPerPage) || 1;
 
@@ -87,12 +89,17 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     if (specialtyTableBody) {
         specialtyTableBody.innerHTML = '';
-        paginatedItems.forEach(sp => specialtyTableBody.append(createSpecialtyRow(sp)));
+        if (paginatedItems.length === 0) {
+            specialtyTableBody.innerHTML = '<tr><td colspan="4" style="text-align: center;">No se encontraron resultados</td></tr>';
+        } else {
+            paginatedItems.forEach(sp => specialtyTableBody.append(createSpecialtyRow(sp)));
+        }
     }
 
-    if (resultsCount) {
+    const countElement = document.getElementById('specialty-count');
+    if (countElement) {
         const currentEnd = Math.min(startIndex + itemsPerPage, totalItems);
-        resultsCount.textContent = `Mostrando ${totalItems === 0 ? 0 : startIndex + 1} a ${currentEnd} de ${totalItems} resultados`;
+        countElement.textContent = `Mostrando ${totalItems === 0 ? 0 : startIndex + 1} a ${currentEnd} de ${totalItems}`;
     }
     
     if (prevBtn) prevBtn.disabled = currentPage === 1;
